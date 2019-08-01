@@ -6,3 +6,26 @@
 	padding: 0;
 	border: 0;
 }
+
+body {
+	background-image: url("../img/marble-bkg.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	
+	@media (min-width: 850px) {
+		background-position: top left;
+		background-size: 30% 100vh;
+	}
+}
+
+.primary-content {
+	background-color: #fff;
+	height: 85vh;
+	margin-top: 15vh;
+
+	@media (min-width: 850px) {
+		height: 100vh;
+		width: 70%;
+		margin: 0 0 0 auto;
+	}
+}
