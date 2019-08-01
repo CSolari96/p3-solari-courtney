@@ -8,6 +8,8 @@
 }  // End reset rule
 
 body {
+	.body-copy();
+
 	background-image: url("../img/marble-bkg.png");
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -42,9 +44,17 @@ header {
 
 main {
 	.welcome {
-		width: 90%;
+		width: 74%;
+		max-width: 600px;
 		margin: auto;
 		background-color: @teal;
+		padding: 8%;
+		border-radius: 33px;
+
+		@media (min-width: 1000px) {
+			width: 80%;
+			padding: 5%;
+		}  // End min-width 1000
 	} // End .welcome
 
 	.game {
