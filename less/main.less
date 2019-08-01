@@ -5,7 +5,7 @@
 	margin: 0;
 	padding: 0;
 	border: 0;
-}
+}  // End reset rule
 
 body {
 	background-image: url("../img/marble-bkg.png");
@@ -15,8 +15,8 @@ body {
 	@media (min-width: 850px) {
 		background-position: top left;
 		background-size: 30% 100vh;
-	}
-}
+	}  // End min-width 850
+}  // End body
 
 .primary-content {
 	background-color: #fff;
@@ -27,5 +27,31 @@ body {
 		height: 100vh;
 		width: 70%;
 		margin: 0 0 0 auto;
-	}
-}
+	}  // End min-width 850
+}  // End .primary-content
+
+header {
+	img {
+		max-width: 600px;
+		width: 90%;
+		display: block;
+		margin: auto;
+		padding: 10% 0;
+	}  // End img
+}  // End header
+
+main {
+	.welcome {
+		width: 90%;
+		margin: auto;
+		background-color: @teal;
+	} // End .welcome
+
+	.game {
+
+	} // End .game
+
+	.fortune {
+
+	}  // End .fortune
+}  // End main
