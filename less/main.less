@@ -58,6 +58,8 @@ main {
 	} // End .welcome
 
 	.game {
+		position: relative;
+
 		.one {
 			border-radius: 40px 0 0 0;
 		}  // End .one
@@ -80,6 +82,8 @@ main {
 			width: 80%;
 			margin: auto;
 			position: absolute;
+			left: 0;
+			right: 0;
 
 			.square {
 				width: 48%;
@@ -97,6 +101,7 @@ main {
 		}  // End section
 
 		.layer1 {
+			z-index: 1;
 			.one {
 				background-image: url("../img/sparkle-1.png");
 				.background();
@@ -119,11 +124,11 @@ main {
 		}  // End .layer1
 
 		.layer2 {
-
+			z-index: 0;
 		}  // End .layer2
 
 		.layer3 {
-
+			z-index: -1;
 		}  // End .layer3
 	} // End .game
 
