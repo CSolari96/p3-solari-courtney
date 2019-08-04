@@ -69,19 +69,35 @@ main {
 
 		.one {
 			border-radius: 40px 0 0 0;
+
+			p {
+				transform: rotate(-45deg);
+			}  // End p
 		}  // End .one
 
 		.two {
 			border-radius: 0 40px 0 0;
+
+			p {
+				transform: rotate(45deg);
+			}  // End p
 		}  // End .two
 
 		.three {
 			border-radius: 0 0 0 40px;
+
+			p {
+				transform: rotate(-135deg);
+			}  // End p
 		}  // End .three
 
 		.four {
 			border-radius: 0 0 40px 0;
-		}  // .four
+
+			p {
+				transform: rotate(135deg);
+			}  // End p
+		}  // End .four
 
 		section {
 			display: flex;
@@ -110,12 +126,20 @@ main {
 					position: absolute;
 					width: 100%;
 					height: 100%;
-				}
+					display: flex;
+					justify-content: center;
+
+					p {
+						align-self: center;
+						.bold();
+						font-size: 3rem;
+						color: @dark-purple;
+					}  // End p
+				}  // End .content
 			}  // End .square
 		}  // End section
 
 		.layer1 {
-			z-index: 1;
 			.one {
 				background-image: url("../img/sparkle-1.png");
 				.background();
@@ -137,13 +161,17 @@ main {
 			}  // .four
 		}  // End .layer1
 
-		.layer2 {
-			z-index: 0;
-		}  // End .layer2
+		.top {
+			z-index: 2;
+		}  // End .top
 
-		.layer3 {
-			z-index: -1;
-		}  // End .layer3
+		.middle {
+			z-index: 1;
+		}  // End .middle
+
+		.bottom {
+			z-index: 0;
+		}  // End .bottom
 	} // End .game
 
 	.fortune {
