@@ -58,8 +58,43 @@ main {
 	} // End .welcome
 
 	.game {
+		.one {
+			border-radius: 40px 0 0 0;
+		}  // End .one
+
+		.two {
+			border-radius: 0 40px 0 0;
+		}  // End .two
+
+		.three {
+			border-radius: 0 0 0 40px;
+		}  // End .three
+
+		.four {
+			border-radius: 0 0 40px 0;
+		}  // .four
+
 		.layer1 {
-				
+			display: flex;
+			flex-wrap: wrap;
+			width: 80%;
+			margin: auto;
+
+			.square {
+				width: 48%;
+				margin: 1%;
+				background-color: @light-teal;
+				box-sizing: border-box;
+				border: 1px @dark-purple solid;
+
+				&:after {
+					content: "";
+					display: block;
+					padding-bottom: 100%;
+				}  // End &:after
+			}  // End .square
+
+			
 		}  // End .layer1
 	} // End .game
 
