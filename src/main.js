@@ -25,13 +25,26 @@ function startGame() {
 
 // Loop 
 function colorLoop() {
-	const animate = () => this.classList.toggle("animate");
+	const animate1 = () => {
+		for (let i = 0; i < layer1Squares.length; i++) {
+			layer1Squares[i].classList.toggle("animate1");
+		}
+	};
+
+	const animate2 = () => {
+		for (let i = 0; i < layer1Squares.length; i++) {
+			layer1Squares[i].classList.toggle("animate2");
+		}
+	};
+
 	const colorNameLength = this.getElementsByTagName("img")[0].alt.length;
 
-	console.log(this);
-	console.log(colorNameLength);
 	for (let i = 0; i < colorNameLength * 2; i++) {
-		setTimeout(animate, i * 1000);
+		if ([0, 1, 4, 5, 8, 9, 12, 13].indexOf(i) > -1) {
+			setTimeout(animate1, i * 1000);
+		} else {
+			setTimeout(animate2, i * 1000);
+		}
 	}
 }
 
