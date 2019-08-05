@@ -21,7 +21,28 @@ function startGame() {
 	logo.classList.add("resize");			// Resize logo
 	welcomeMessage.classList.add("hide");	// Hide welcome message
 	gamePlay.classList.remove("hide");		// Show game squares
+}  // End startGame() function
+
+// Loop 
+function colorLoop() {
+	const animate = () => this.classList.toggle("animate");
+	const colorNameLength = this.getElementsByTagName("img")[0].alt.length;
+
+	console.log(this);
+	console.log(colorNameLength);
+	for (let i = 0; i < colorNameLength * 2; i++) {
+		setTimeout(animate, i * 1000);
+	}
 }
+
+
+
+
+
 
 // Begin the game after 5 seconds
 setTimeout(startGame, 5000);
+
+for (let i = 0; i < layer1Squares.length; i++) {
+	layer1Squares[i].addEventListener("click", colorLoop);
+}
