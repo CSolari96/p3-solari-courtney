@@ -23,44 +23,56 @@ function startGame() {
 	gamePlay.classList.remove("hide");		// Show game squares
 }  // End startGame() function
 
-// Loop 
+// On layer 1, loop through animation for length of the color name 
 function colorLoop() {
+
+	// Animate first movement direction
 	const animate1 = () => {
+		// On each square of layer 1, toggle animate1 class
 		for (let i = 0; i < layer1Squares.length; i++) {
 			layer1Squares[i].classList.toggle("animate1");
-		}
-	};
+		}  // End for loop
+	};  // End animate1 function
 
+	// Animate second movement direction
 	const animate2 = () => {
+		// On each square of layer 1, toggle animate2 class
 		for (let i = 0; i < layer1Squares.length; i++) {
 			layer1Squares[i].classList.toggle("animate2");
-		}
-	};
+		}  // End for loop
+	};  // End animate2 class
 
-	const colorNameLength = this.getElementsByTagName("img")[0].alt.length;
+	// Set length of color name based on image alt attribute
+	const colorNameLength = this.getElementsByTagName("img")[0].alt.length;	
 
+	// Loop through animation based on length of color name
 	for (let i = 0; i < colorNameLength * 2; i++) {
 		if ([0, 1, 4, 5, 8, 9, 12, 13].indexOf(i) > -1) {
 			setTimeout(animate1, i * 1000);
 		} else {
 			setTimeout(animate2, i * 1000);
-		}
-	}
-}
+		}  // End if/esle
+	}  // End for loop
+}  // End colorLoop() function
 
+// Change from layer1 to layer2
 function changeLayer1() {
+
+	// Add hide class to layer1 and remove hide class from layer 2
 	const swap = () => {
 		layer1.classList.add("hide");
 		layer2.classList.remove("hide");
-	}
+	}  // End swap function
 
-	setTimeout(swap, this.getElementsByTagName("img")[0].alt.length * 2 * 1000);
-}
+	// Set timeout to swap layers
+	setTimeout(swap, this.getElementsByTagName("img")[0].alt.length * 2 * 1000);  
+}  // End changeLayer1() function
 
 // Begin the game after 5 seconds
 setTimeout(startGame, 5000);
 
+// Add click event listeners to each square on layer1
 for (let i = 0; i < layer1Squares.length; i++) {
-	layer1Squares[i].addEventListener("click", colorLoop);
-	layer1Squares[i].addEventListener("click", changeLayer);
-}
+	layer1Squares[i].addEventListener("click", colorLoop);		// When clicked, trigger colorLoop function
+	layer1Squares[i].addEventListener("click", changeLayer1);	// When clicked, trigger changeLayer1 function
+}  // End for loop
