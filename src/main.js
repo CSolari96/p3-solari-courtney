@@ -96,6 +96,15 @@ function changeLayer1() {
 	setTimeout(swap, this.getElementsByTagName("img")[0].alt.length * 2 * 1000);  
 }  // End changeLayer1() function
 
+function changeLayer2() {
+	const swap = () => {
+		layer2.classList.add("hide");
+		layer3.classList.remove("hide");
+	}
+
+	setTimeout(swap, Number(this.textContent) * 2 * 1000);
+}
+
 // Begin the game after 5 seconds
 setTimeout(startGame, 5000);
 
@@ -107,4 +116,5 @@ for (let i = 0; i < layer1Squares.length; i++) {
 
 for (let i = 0; i < layer2Squares.length; i++) {
 	layer2Squares[i].addEventListener("click", numberLoop);
+	layer2Squares[i].addEventListener("click", changeLayer2);
 }
