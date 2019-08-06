@@ -51,9 +51,37 @@ function colorLoop() {
 			setTimeout(animate1, i * 1000);
 		} else {
 			setTimeout(animate2, i * 1000);
-		}  // End if/esle
+		}  // End if/else
 	}  // End for loop
 }  // End colorLoop() function
+
+function numberLoop() {
+
+	const currentLayerSquares = this.parentNode.children;
+
+	const animate1 = () => {
+		// On each square of layer 1, toggle animate1 class
+		for (let i = 0; i < currentLayerSquares.length; i++) {
+			currentLayerSquares[i].classList.toggle("animate1");
+		}  // End for loop
+	};  // End animate1 function
+
+	// Animate second movement direction
+	const animate2 = () => {
+		// On each square of layer 1, toggle animate2 class
+		for (let i = 0; i < currentLayerSquares.length; i++) {
+			currentLayerSquares[i].classList.toggle("animate2");
+		}  // End for loop
+	};  // End animate2 class
+
+	for (let i = 0; i < Number(this.textContent) * 2; i++) {
+		if ([0, 1, 4, 5, 8, 9, 12, 13].indexOf(i) > -1) {
+			setTimeout(animate1, i * 1000);
+		} else {
+			setTimeout(animate2, i * 1000);
+		}  // End if/else
+	}
+}
 
 // Change from layer1 to layer2
 function changeLayer1() {
@@ -76,3 +104,7 @@ for (let i = 0; i < layer1Squares.length; i++) {
 	layer1Squares[i].addEventListener("click", colorLoop);		// When clicked, trigger colorLoop function
 	layer1Squares[i].addEventListener("click", changeLayer1);	// When clicked, trigger changeLayer1 function
 }  // End for loop
+
+for (let i = 0; i < layer2Squares.length; i++) {
+	layer2Squares[i].addEventListener("click", numberLoop);
+}
