@@ -84,31 +84,29 @@ function numberLoop() {
 	}  // End for loop
 }  // End numberLoop() function
 
-// Change from layer1 to layer2
-function changeLayer1() {
+// Change from one layer to the next
+function changeLayer() {
 
-	// Add hide class to layer1 and remove hide class from layer 2
+	const currentLayer = this.parentElement;			// Determine current layer
+	const nextLayer = currentLayer.nextElementSibling;	// Determine next layer to show
+	let count;											// Set empty count variable
+
+	// Add hide class to current layer and remove from next layer
 	const swap = () => {
-		layer1.classList.add("hide");
-		layer2.classList.remove("hide");
+		currentLayer.classList.add("hide");
+		nextLayer.classList.remove("hide");
 	}  // End swap function
 
-	// Set timeout to swap layers
-	setTimeout(swap, this.getElementsByTagName("img")[0].alt.length * 2 * 1000);  
-}  // End changeLayer1() function
-
-// Change from layer2 to layer3
-function changeLayer2() {
-
-	// Add hide class to layer2 and remove hide class from layer3
-	const swap = () => {
-		layer2.classList.add("hide");
-		layer3.classList.remove("hide");
-	}  // End swap function
+	// Check to see if current layer is layer 1 or layer 2 to accurately set count value
+	if (currentLayer === layer1) {
+		count = this.getElementsByTagName("img")[0].alt.length;		// If layer1, set count value to image alt attribute
+	} else {
+		count = Number(this.textContent);							// Else, set count value to square's text content
+	}  // End if/else
 
 	// Set timeout to swap layers
-	setTimeout(swap, Number(this.textContent) * 2 * 1000);
-}  // End changeLayer2() function
+	setTimeout(swap, count * 2 * 1000);
+}  // End changeLayer() function
 
 // Begin the game after 5 seconds
 setTimeout(startGame, 5000);
@@ -116,11 +114,11 @@ setTimeout(startGame, 5000);
 // Add click event listeners to each square on layer1
 for (let i = 0; i < layer1Squares.length; i++) {
 	layer1Squares[i].addEventListener("click", colorLoop);		// When clicked, trigger colorLoop function
-	layer1Squares[i].addEventListener("click", changeLayer1);	// When clicked, trigger changeLayer1 function
+	layer1Squares[i].addEventListener("click", changeLayer);	// When clicked, trigger changeLayer function
 }  // End for loop
 
 // Add click event listeners to each square on layer2
 for (let i = 0; i < layer2Squares.length; i++) {
 	layer2Squares[i].addEventListener("click", numberLoop);		// When clicked, trigger numberLoop function
-	layer2Squares[i].addEventListener("click", changeLayer2);	// When clicked, trigger changeLayer2 function
+	layer2Squares[i].addEventListener("click", changeLayer);	// When clicked, trigger changeLayer function
 }  // End for loop
