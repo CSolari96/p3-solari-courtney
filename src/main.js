@@ -3,6 +3,7 @@ const logo = document.getElementById("logo");				// Logo
 const welcomeMessage = document.querySelector(".welcome");	// Welcome message
 const gamePlay = document.querySelector(".game");			// Game play screen
 const fortuneResult = document.querySelector(".fortune");	// Fortune reveal
+const fortunePlaceholder = fortuneResult.children[0];
 
 // Store layer1 squares
 const layer1 = document.querySelector(".layer1");						// Layer 1
@@ -132,6 +133,11 @@ function displayFortune() {
 	fortunes.sort(function(a, b){return 0.5 - Math.random()});		// Randomly sort fortunes array
 	const randomFortune = fortunes[0];								// Select first fortune from randomly sorted array
 
+	const swap = () => {
+		gamePlay.classList.add("hide");
+		fortuneResult.classList.remove("hide");
+	};
+
 	// Create empty variable to hold element index
 	let elementIndex;
 
@@ -142,25 +148,33 @@ function displayFortune() {
 		}  // End if statement
 	}  // End for loop
 
+	// Trigger appropriate animation on selected square
 	switch (elementIndex) {
+		// Square 1
 		case 0:
 			this.classList.add("topLeftReveal");
 			break;
+		
+		// Square 2
 		case 1:
 			this.classList.add("topRightReveal");
 			break;
+
+		// Square 3
 		case 2:
 			this.classList.add("bottomLeftReveal");
 			break;
+
+		// Square 4
 		case 3:
 			this.classList.add("bottomRightReveal");
 			break;
 	}  // End switch statement
 
-	// Hide game section
+	// Add random fortune to placeholder
+	fortunePlaceholder.innerText = randomFortune;
 
-	// Reveal fortune section with text set to random fortune
-
+	setTimeout(swap, 1000);
 }  // End displayFortune() function
 
 
