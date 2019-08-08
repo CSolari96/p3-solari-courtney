@@ -128,6 +128,19 @@ function changeLayer() {
 // Display random fortune
 function displayFortune() {
 
+	// Grab a random fortune from fortune array
+	fortunes.sort(function(a, b){return 0.5 - Math.random()});
+	const randomFortune = fortunes[0];
+
+	console.log(fortunes);
+	console.log(randomFortune);
+
+	// Trigger animation effect on selected square
+
+	// Hide game section
+
+	// Reveal fortune section with text set to random fortune
+
 }  // End displayFortune() function
 
 
