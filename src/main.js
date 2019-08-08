@@ -129,13 +129,33 @@ function changeLayer() {
 function displayFortune() {
 
 	// Grab a random fortune from fortune array
-	fortunes.sort(function(a, b){return 0.5 - Math.random()});
-	const randomFortune = fortunes[0];
+	fortunes.sort(function(a, b){return 0.5 - Math.random()});		// Randomly sort fortunes array
+	const randomFortune = fortunes[0];								// Select first fortune from randomly sorted array
 
-	console.log(fortunes);
-	console.log(randomFortune);
+	// Create empty variable to hold element index
+	let elementIndex;
 
-	// Trigger animation effect on selected square
+	// Determine index of selected square in layer 3
+	for (let i = 0; i < layer3Squares.length; i++) {
+		if (layer3[i] === this) {
+			elementIndex = i;		// Store index number
+		}  // End if statement
+	}  // End for loop
+
+	switch (elementIndex) {
+		case 0:
+			this.classList.add("topLeftReveal");
+			break;
+		case 1:
+			this.classList.add("topRightReveal");
+			break;
+		case 2:
+			this.classList.add("bottomLeftReveal");
+			break;
+		case 3:
+			this.classList.add("bottomRightReveal");
+			break;
+	}  // End switch statement
 
 	// Hide game section
 
