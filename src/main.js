@@ -30,6 +30,9 @@ const fortunes = [
 	"The change you started already has far-reaching effects. Be ready."
 ];
 
+
+
+
 // Dismiss welcome message, resize logo, and show game elements
 function startGame() {
 	logo.classList.add("resize");			// Resize logo
@@ -122,6 +125,14 @@ function changeLayer() {
 	setTimeout(swap, count * 2 * 1000);
 }  // End changeLayer() function
 
+// Display random fortune
+function displayFortune() {
+
+}  // End displayFortune() function
+
+
+
+
 // Begin the game after 5 seconds
 setTimeout(startGame, 5000);
 
@@ -135,4 +146,9 @@ for (let i = 0; i < layer1Squares.length; i++) {
 for (let i = 0; i < layer2Squares.length; i++) {
 	layer2Squares[i].addEventListener("click", numberLoop);		// When clicked, trigger numberLoop function
 	layer2Squares[i].addEventListener("click", changeLayer);	// When clicked, trigger changeLayer function
+}  // End for loop
+
+// Add click event listener to each square on layer3
+for (let i = 0; i < layer3Squares.length; i++) {
+	layer3Squares[i].addEventListener("click", displayFortune);	// When clicked, trigger displayFortune function
 }  // End for loop
