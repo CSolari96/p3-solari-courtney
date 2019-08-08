@@ -137,7 +137,7 @@ function displayFortune() {
 
 	// Determine index of selected square in layer 3
 	for (let i = 0; i < layer3Squares.length; i++) {
-		if (layer3[i] === this) {
+		if (layer3Squares[i] === this) {
 			elementIndex = i;		// Store index number
 		}  // End if statement
 	}  // End for loop
