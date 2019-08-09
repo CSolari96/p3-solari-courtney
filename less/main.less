@@ -10,21 +10,37 @@
 body {
 	.body-copy();
 
-	background-image: url("../img/marble-bkg.png");
+	/*background-image: url("../img/marble-bkg.png");
 	background-size: cover;
 	background-repeat: no-repeat;
 	
 	@media (min-width: 850px) {
 		background-position: top left;
 		background-size: 30% 100vh;
-	}  // End min-width 850
+	}  // End min-width 850*/
 }  // End body
+
+.marble-pattern {
+	.mobile {
+		width: 100%;
+
+		@media (min-width: 850px) {
+			display: none;
+		}
+	}
+
+	.desktop {
+		display: none;
+
+		@media (min-width: 850px) {
+			display: block;
+		}
+	}
+}
 
 .primary-content {
 	background-color: #fff;
-	height: 85vh;
-	margin-top: 15vh;
-
+	
 	@media (min-width: 850px) {
 		height: 100vh;
 		width: 70%;
@@ -38,7 +54,7 @@ header {
 		width: 90%;
 		display: block;
 		margin: auto;
-		padding: 10% 0;
+		padding: 5% 0;
 		transition: all 0.5s;
 		.fadeIn();
 
