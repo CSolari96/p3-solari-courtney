@@ -60,13 +60,33 @@ main {
 		padding: 8%;
 		border-radius: 33px;
 		transition: all 0.5s;
-		.fadeIn();
 
 		@media (min-width: 1000px) {
 			width: 80%;
 			padding: 5%;
 		}  // End min-width 1000
-	} // End .welcome
+	} // End .message
+
+	.welcome {
+		.fadeIn();
+
+		button {
+			.bold();
+			background-color: @dark-purple;
+			color: @light-teal;
+			padding: 2% 5%;
+			margin: 2%;
+			border-radius: 33px;
+			text-transform: uppercase;
+			transition: all 0.5s;
+
+			&:hover {
+				background-color: @light-pink;
+				color: @dark-purple;
+				transition: all 0.5s;
+			}  // End :hover
+		}  // End button
+	}  // End .welcome
 
 	.game {
 		position: relative;
@@ -183,6 +203,8 @@ main {
 	} // End .game
 
 	.fortune {
+		.fadeIn();
+
 		h2 {
 			font-size: 1.25rem;
 		}
