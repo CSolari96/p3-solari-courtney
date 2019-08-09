@@ -1,8 +1,9 @@
 // Store logo and page sections
-const logo = document.getElementById("logo");				// Logo
-const welcomeMessage = document.querySelector(".welcome");	// Welcome message
-const gamePlay = document.querySelector(".game");			// Game play screen
-const fortuneResult = document.querySelector(".fortune");	// Fortune reveal
+const logo = document.getElementById("logo");							// Logo
+const welcomeMessage = document.querySelector(".welcome");				// Welcome message
+const startButton = welcomeMessage.getElementsByTagName("button")[0];	// Start button
+const gamePlay = document.querySelector(".game");						// Game play screen
+const fortuneResult = document.querySelector(".fortune");				// Fortune reveal
 
 // Store layer1 squares
 const layer1 = document.querySelector(".layer1");						// Layer 1
@@ -28,7 +29,7 @@ const fortunes = [
 	"Any decision you have to make tomorrow is a good decision.",
 	"A lifetime friend shall soon be made.",
 	"The change you started already has far-reaching effects. Be ready."
-];
+];  // End fortunes array
 
 
 
@@ -180,8 +181,8 @@ function displayFortune() {
 
 
 
-// Begin the game after 5 seconds
-setTimeout(startGame, 5000);
+// Begin the game when the start button is clicked
+startButton.addEventListener("click", startGame);
 
 // Add click event listeners to each square on layer1
 for (let i = 0; i < layer1Squares.length; i++) {
