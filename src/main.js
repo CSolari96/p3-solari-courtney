@@ -1,3 +1,5 @@
+/* ********** DEFINE VARIABLES ********** */
+
 // Store logo and page sections
 const logo = document.getElementById("logo");							// Logo
 const welcomeMessage = document.querySelector(".welcome");				// Welcome message
@@ -31,8 +33,7 @@ const fortunes = [
 	"The change you started already has far-reaching effects. Be ready."
 ];  // End fortunes array
 
-
-
+/* ********** FUNCTIONS ********** */
 
 // Dismiss welcome message, resize logo, and show game elements
 function startGame() {
@@ -178,8 +179,7 @@ function displayFortune() {
 	setTimeout(swap, 1000);
 }  // End displayFortune() function
 
-
-
+/* ********** GAME PLAY ********** */
 
 // Begin the game when the start button is clicked
 startButton.addEventListener("click", startGame);
