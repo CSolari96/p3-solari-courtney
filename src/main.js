@@ -3,7 +3,6 @@ const logo = document.getElementById("logo");				// Logo
 const welcomeMessage = document.querySelector(".welcome");	// Welcome message
 const gamePlay = document.querySelector(".game");			// Game play screen
 const fortuneResult = document.querySelector(".fortune");	// Fortune reveal
-const fortunePlaceholder = fortuneResult.children[0];
 
 // Store layer1 squares
 const layer1 = document.querySelector(".layer1");						// Layer 1
@@ -172,7 +171,8 @@ function displayFortune() {
 	}  // End switch statement
 
 	// Add random fortune to placeholder
-	fortunePlaceholder.innerText = randomFortune;
+	fortuneResult.children[0].innerText = `You selected number ${this.textContent.trim()}.`;
+	fortuneResult.children[1].innerText = randomFortune;
 
 	setTimeout(swap, 1000);
 }  // End displayFortune() function
